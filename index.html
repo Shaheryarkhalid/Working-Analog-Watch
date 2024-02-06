@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./index.css">
+   
+</head>
+<body>
+    <section class="Main-Section">
+        <div class="Content-Wrapper">
+            <div class="Menu">
+                <div>
+                    <h1><button id="Stop_Watch_Button">Stop Watch</button></h1>
+                    <span style="display: none;" id="Stop_Watch_Span"></span>
+                </div>
+                <div>
+                    <h1><button id="Clock_Button">Clock</button></h1>
+                    <span  id="Clock_Span"></span>
+                </div>
+            </div>
+            <div class="Content">
+                    <div class="Stop-Watch">
+                        <div class="Stop_Watch_Time">
+                            <div id="hours">00</div>
+                            <span> : </span>
+                            <div id="Minutes">00</div>
+                            <span>:</span>
+                            <div id="Seconds">00</div>
+                            <span>:</span>
+                            <div id="MilliSeconds">00</div> 
+                        </div>
+                        <div class="actions">
+                            <button class="Toogle_Button" id="Toogle_Button" onclick="Start_Timer()">      
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"  viewBox="0 0 24 24">
+                                    <polygon points="8 5 8 19 19 12" fill="#FF9800"  height="100%" width="100%"/>
+                                </svg>                      
+                            </button>
+                            <button id="Pause_Timer" class="Toogle_Button" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                    <rect x="7" y="5" width="4" height="14" fill="#FF9800" height="100%" width="100%"/>
+                                    <rect x="13" y="5" width="4" height="14" fill="#FF9800" height="100%" width="100%"/>
+                                </svg>
+                            </button>
+                            <button id="Reset_Timer" class="Toogle_Button" onclick="Reset_Timer()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                                    <path d="M35.3 12.7c-2.89-2.9-6.88-4.7-11.3-4.7-8.84 0-15.98 7.16-15.98 16s7.14 16 15.98 16c7.45 0 13.69-5.1 15.46-12h-4.16c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55l-6.45 6.45h14v-14l-4.7 4.7z" fill="#FF9800"  height="100%" width="100%"/>
+                                    <path d="M0 0h48v48h-48z" fill="none"/>
+                                </svg>                                            
+                            </button>
+                    </div>
+            </div>
+            <div class="Clock">
+                <div class="Hours-lines">
+                    <div style="--Hours:12; --count:3; " class="Hours-figures"> <div>12</div></div>
+                    <div style="--Hours:3;   --count:3.95" class="Hours-figures"><i>3</i></div>
+                    <div style="--Hours:6; --count:1.97;" class="Hours-figures"> <i>6</i></div>
+                    <div style="--Hours:9; --count:1" class="Hours-figures"><div>9</div></div>
+                    <p style="--miin-s:1"></p>
+                    <p style="--miin-s:2"></p>
+                    <p style="--miin-s:3"></p>
+                    <p style="--miin-s:4"></p>
+                    <p style="--miin-s:5"></p>
+                    <p style="--miin-s:6"></p>
+                    <p style="--miin-s:7"></p>
+                    <p style="--miin-s:8"></p>
+                    <p style="--miin-s:9"></p>
+                    <p style="--miin-s:10"></p>
+                    <p style="--miin-s:11"></p>
+                    <p style="--miin-s:12"></p>
+                    <p style="--miin-s:13"></p>
+                    <p style="--miin-s:14"></p>
+                    <p style="--miin-s:15"></p>
+                    <p style="--miin-s:16"></p>
+                    <p style="--miin-s:17"></p>
+                    <p style="--miin-s:18"></p>
+                    <p style="--miin-s:19"></p>
+                    <p style="--miin-s:20"></p>
+                    <p style="--miin-s:21"></p>
+                    <p style="--miin-s:22"></p>
+                    <p style="--miin-s:23"></p>
+                    <p style="--miin-s:24"></p>
+                    <p style="--miin-s:25"></p>
+                    <p style="--miin-s:26"></p>
+                    <p style="--miin-s:27"></p>
+                    <p style="--miin-s:28"></p>
+                    <p style="--miin-s:29"></p>
+                    <p style="--miin-s:30"> </p>
+                    <p style="--miin-s:31"> </p>
+                    <p style="--miin-s:32"> </p>
+                    <p style="--miin-s:33"> </p>
+                    <p style="--miin-s:34"> </p>
+                    <p style="--miin-s:35"> </p>
+                    <p style="--miin-s:36"> </p>
+                    <p style="--miin-s:37"> </p>
+                    <p style="--miin-s:38"> </p>
+                    <p style="--miin-s:39"> </p>
+                    <p style="--miin-s:40"> </p>
+                    <p style="--miin-s:41"> </p>
+                    <p style="--miin-s:42"> </p>
+                    <p style="--miin-s:43"> </p>
+                    <p style="--miin-s:44"> </p>
+                    <p style="--miin-s:45"> </p>
+                    <p style="--miin-s:46"> </p>
+                    <p style="--miin-s:47"> </p>
+                    <p style="--miin-s:48"> </p>
+                    <p style="--miin-s:49"> </p>
+                    <p style="--miin-s:50"> </p>
+                    <p style="--miin-s:51"> </p>
+                    <p style="--miin-s:52"> </p>
+                    <p style="--miin-s:53"> </p>
+                    <p style="--miin-s:54"> </p>
+                    <p style="--miin-s:55"> </p>
+                    <p style="--miin-s:56"> </p>
+                    <p style="--miin-s:57"> </p>
+                    <p style="--miin-s:58"> </p>
+                    <p style="--miin-s:59"> </p>
+                    <p style="--miin-s:60"> </p>
+                    <span style="--lines:1"></span>
+                    <span style="--lines:2"></span>
+                    <span style="--lines:4"></span>
+                    <span style="--lines:5"></span>
+                    <span style="--lines:7"></span>
+                    <span style="--lines:8"></span>
+                    <span style="--lines:10"></span>
+                    <span style="--lines:11"></span>
+                </div>
+                <div class="Moving-Animation">
+                    <span class="dial"></span>
+                    <div class="Second-Hand">
+                        <span></span>
+                    </div>
+                    <div class="Minute-Hand"></div>
+                    <div class="Hour-Hand">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./index.js">
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Raleway', sans-serif;
+    --Orange-Color:#FF9800;
+}
+section.Main-Section{
+    min-height: 100vh;
+    min-width: 100%;
+    background-color: var(--Orange-Color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Main-Section .Content-Wrapper{
+    height:60vh;
+    width: 60%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.Main-Section .Content-Wrapper .Menu{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.Main-Section .Content-Wrapper .Menu div{
+    display: flex;
+    flex-direction: column;
+}
+.Main-Section .Content-Wrapper .Menu h1{
+    padding: 5px;
+}
+.Main-Section .Content-Wrapper .Menu h1 button{
+        color: var(--Orange-Color);
+        font-weight: 400;
+        font-size: clamp(0.5rem,3vw,1.6rem);
+        text-wrap: nowrap;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+}
+.Main-Section .Content-Wrapper .Menu span{
+    display: block;
+    width: 40%;
+    height: 1px;
+    justify-self: center;
+    align-self: center;
+    background-color: var(--Orange-Color);
+    border-bottom: 1px solid var(--Orange-Color);
+}
+.Main-Section .Content-Wrapper .Content{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* 
+////////////////  Stop Watch  //////////////////////////////////// */
+.Main-Section .Content-Wrapper .Content .Stop-Watch{
+    left:px;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .Stop_Watch_Time{
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .Stop_Watch_Time div,
+.Main-Section .Content-Wrapper .Content .Stop-Watch .Stop_Watch_Time span{
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(0.5rem,5vw,2rem);
+    color: var(--Orange-Color);
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .Stop_Watch_Time div{
+    width: 2ch;
+    text-align: center;
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .actions{
+    
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .actions button{
+    cursor: pointer;
+    padding:8px 10px;
+    background-color: transparent;
+    border: 1px solid var(--Orange-Color);
+    border-radius: 50%;
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .actions button svg{
+    max-width: 50px;
+    max-height: 50px;
+}
+.Main-Section .Content-Wrapper .Content .Stop-Watch .actions button:disabled{
+    border-color: #000;
+    cursor: not-allowed;
+}
+/* 
+////////////////// Clock/////////////////////////////////// */
+
+.Main-Section .Content-Wrapper .Content .Clock{
+    left: 0px;
+    position: relative;    
+    height: 300px;
+    width: 300px;
+    border: 1px solid var(--Orange-Color);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines{
+    display: flex;
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines span{
+    position: absolute;
+    top:50%;
+    left:47%;
+    height:2px;
+    width: 20px;
+    background-color: var(--Orange-Color);
+    transform: rotate(calc((360deg / 12) * var(--lines))) translate(130px);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines p{
+    position: absolute;
+    top:151px;
+    left:145px;
+    height:2px;
+    width: 10px;
+    background-color: var(--Orange-Color);
+    transform: rotate(calc((360deg / 60) * var(--miin-s))) translate(105px);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines  .Hours-figures{
+    position: absolute;
+    top:50%;
+    left:47%;
+    height:2px;
+    width: 20px;
+    color: var(--Orange-Color);
+    transform: rotate(calc((360deg / 4) * var(--count))) translate(133px);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines  .Hours-figures div{
+    transform: rotate(90deg);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Hours-lines  .Hours-figures i{
+    transform: rotateY(180deg);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Moving-Animation{
+    position: absolute;
+    top:12%;
+    left:12%;
+    height:230px;
+    width: 230px;
+    border-radius: 50%;
+    border: 1px solid var(--Orange-Color);
+}
+.Main-Section .Content-Wrapper .Content .Clock .Moving-Animation .Second-Hand{
+    position: absolute;
+    top:20px;
+    left:52%;
+    height: 200PX;
+    border-radius: 50%;
+    width: 2px;
+    background-image: linear-gradient( var(--Orange-Color) 50%, rgba(255,255,255,0.1) 50%);
+    animation: ani_1 60s steps(60) infinite;
+}
+.Main-Section .Content-Wrapper .Content .Clock .Moving-Animation .Minute-Hand{
+    position: absolute;
+    top:28px;
+    left:52%;
+    height: 180PX;
+    width: 3px;
+    border-radius: 50%;
+    background-image: linear-gradient( #aaa 50%, rgba(255,255,255,0.1) 50%);
+    animation: ani_2 3600s steps(60) infinite;
+}
+.Main-Section .Content-Wrapper .Content .Clock .Moving-Animation .Hour-Hand{
+    position: absolute;
+    border-radius: 50%;
+    top:30%;
+    left:52%;
+    height: 100PX;
+    width: 5px;
+    background-color:transparent;
+    background-image: linear-gradient( var(--Orange-Color) 50%, rgba(255,255,255,0.1) 50%);
+    animation: ani_3 43200s steps(60) infinite;
+}
+.Main-Section .Content-Wrapper .Content .Clock .Moving-Animation span.dial{
+    position: absolute;
+    left: 113px;
+    top: 110px !important;
+    height: 15px;
+    width: 15px;
+    background-color: var(--Orange-Color);
+    top:20px;
+    display: block;
+    z-index: 1;
+    border-radius: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 600px) {
+    .Main-Section .Content-Wrapper {
+        width: 100%;
+        border-radius: 0;  /* Adjusted border-radius */
+    }
+
+    .Main-Section .Content-Wrapper .Menu {
+        width: 80%;  /* Adjusted width */
+    }
+
+}
